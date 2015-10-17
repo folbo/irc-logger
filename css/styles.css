@@ -1,0 +1,12 @@
+.nav-stacked > li > a {
+	height: 20px;
+	padding: 1px;
+	padding-left: 23px;
+}
+
+#log {
+	float: left; 
+	margin-left: 240px; 
+	margin-top: 20px; 
+	width: auto;
+}
