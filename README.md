@@ -3,42 +3,38 @@ irc-logger is a web app that displays saved daily logs from irssi.
 
 App will be optimized for handling [Slack's](https://slack.com) syntax.
 ## Configuration
-In irssi:
-
-1. Turn off creating private message windows (and logging them):
-   * `/SET -clear autocreate_query_level`
-   * `/SET autocreate_own_query OFF`
-
-2. Configure logs settings:
-   * `/SET autolog_level ALL -CRAP -CLIENTCRAP -CTCPS -JOINS -PARTS -QUITS -DCC`
+1. Configure irssi's logs settings:
+   * `/SET autolog_level ALL -CRAP -CLIENTCRAP -CTCPS -JOINS -PARTS -QUITS -DCC -MSGS`
    * `/SET term_charset utf-8`
    * `/SET log_create_mode 755`
    * `/SET autolog_path ~/irclogs/$tag/$0/%Y-%m-%d.log`
    * `/SET autolog ON`
+   * `/save`
 
-Note: `autolog_path` contains following variables:
+   Note: `autolog_path` contains following variables:
 
-`$tag` is server name
-`$0` is channel name
-`%Y-%m-%d.log` is output file name (logs will be rolled everyday) (f.e. `2015-10-17.log`)
+   `$tag` is server name
+   `$0` is channel name
+   `%Y-%m-%d.log` is output file name (logs will be rolled everyday) (f.e. `2015-10-17.log`)
 
-After all these steps make sure you have following entries in ~/.irssi/conf file:
-```
-settings = {
-  core = {
-    log_create_mode = "755";
-  };
-  "fe-common/core" = {
-    autolog_path = "~/irclogs/$tag/$0/%Y-%m-%d.log";
-    AUTOLOG = "yes";
-    autolog_level = "ALL -CRAP -CLIENTCRAP -CTCPS -JOINS -PARTS -QUITS -DCC";
-    term_charset = "utf-8";
-};
-```
+2. After all these steps make sure you have following entries in ~/.irssi/conf file:
 
-More on irssi's logging in [irssi documentation](http://www.irssi.org/documentation).
+   ```
+   settings = {
+     core = {
+       log_create_mode = "755";
+     };
+     "fe-common/core" = {
+       autolog_path = "~/irclogs/$tag/$0/%Y-%m-%d.log";
+       AUTOLOG = "yes";
+       autolog_level = "ALL -CRAP -CLIENTCRAP -CTCPS -JOINS -PARTS -QUITS -DCC -MSGS";
+       term_charset = "utf-8";
+   };
+   ```
 
-Now create symbolic link in your website directory: `ln -s ~/irclogs/<servername> logs` and you are good to run these php scripts :)
+   More on irssi's logging in [irssi documentation](http://www.irssi.org/documentation).
+
+3. Now create symbolic link in your website directory: `ln -s ~/irclogs/<servername> logs` and you are good to run these php scripts :)
 
 ## About handling private channels
 If you don't want to log some channels just `/part` them so irssi won't collect logs.

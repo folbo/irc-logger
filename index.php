@@ -18,14 +18,6 @@
 							<?php
 							foreach(glob('logs/*', GLOB_ONLYDIR) as $dir) {
 								$dir = str_replace('logs/', '', $dir);
-								
-								if(strpos($dir,"#") === false) 
-									continue;
-
-								//skip private channels
-								if($dir == "#portalalkolpriv")
-									continue;
-								
 								echo "<li><a data-target=\"#\" data-toggle=\"pill\" href=\"#\" onclick=\"changeChannel('$dir')\">$dir</a></li>";
 							}
 							?>
