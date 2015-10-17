@@ -5,7 +5,7 @@
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
 
@@ -68,15 +68,7 @@
 				format: 'dd-mm-yyyy',
 				language: 'pl'
 			});
-		
-			//set dropdown name to current channel name
-			$('.dropdown-selection').click(
-				function()
-				{
-					var name = $(this).text();
-					$('#chan-select').html(name + '<span class="caret"></span>');
-				});
-			
+
 			$("#datepicker").on("changeDate", function(event) {
 				var formattedDate = $("#datepicker").datepicker('getFormattedDate').split('-');
 				isoDate = formattedDate[2] + "-" + formattedDate[1]  + "-" + formattedDate[0];
