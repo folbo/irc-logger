@@ -4,6 +4,7 @@ irc-logger is a web app that displays saved daily logs from irssi.
 App will be optimized for handling [Slack's](https://slack.com) syntax.
 ## Configuration
 In irssi:
+
 1. Turn off creating private message windows (and logging them):
    * `/SET -clear autocreate_query_level`
    * `/SET autocreate_own_query OFF`
