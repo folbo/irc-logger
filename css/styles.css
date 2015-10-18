@@ -4,6 +4,14 @@
 	padding-left: 23px;
 }
 
+.nick {
+	font-weight: bold;
+}
+
+.timestamp {
+	color: #7A7A7A;
+}
+
 #log {
 	float: left; 
 	margin-left: 240px; 
