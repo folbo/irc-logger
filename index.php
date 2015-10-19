@@ -12,7 +12,7 @@
 	<body>
 		<div style="float: left; width: 800px;">
 			<div>
-				<div class="affix" style="float: left; height: 100vh; background-color: #DADADA;">	
+				<div class="affix" style="float: left; height: 100vh; background-color: #DADADA; overflow: auto">	
 					<h2 class="text-center">hi</h2>
 						<ul class="nav nav-pills nav-stacked" style="margin-bottom: 50px">
 							<?php
