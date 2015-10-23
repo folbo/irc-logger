@@ -8,7 +8,7 @@
 	
 	$regex_link = '/(ftp|https?):\/\/(\w+:?\w*@)?(\S+)(:[0-9]+)?(\/([\w#!:.?+=&%@!\/-])?)?/';
 	$regex_nick = '/\<[ \+\@][^\>]+\>/';
-	$regex_timestamp = '/[0-9]{2}:[0-9]{2}/';
+	$regex_timestamp = '/^[0-9]{2}:[0-9]{2}/';
 
 	while(!feof($logfile)) {
 		$line = fgets($logfile);
