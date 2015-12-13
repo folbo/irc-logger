@@ -31,20 +31,10 @@
 		//define content message
 		$content = substr($line, $pos_start_content);
 
-		//parse urls
-		preg_match_all($regex_link, $content, $matches, PREG_OFFSET_CAPTURE);
-		if($matches){
-			foreach($matches[0] as $match){
-				$position = $match[1];
-				$length = strlen($match[0]);
-				$content = substr($content, 0, $position) . '<a href="' . htmlspecialchars(substr($content, $position, $length)) . '">' . htmlspecialchars(substr($content, $position, $length)) . '</a>' . substr($content, $position + $length) ;
-			}
-		}
-
 		//print output
 		print '<span class="timestamp">' . htmlspecialchars($timestamp) . '</span> ';
 		print '<span class="nick">' . htmlspecialchars($nick) . '</span> ';
-		print $content;
+		print htmlspecialchars($content);
 		print "<br>";
 	}
 
